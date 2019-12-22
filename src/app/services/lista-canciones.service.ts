@@ -1,12 +1,18 @@
 import { Injectable } from '@angular/core';
-
+import { HttpClient } from "@angular/common/http";
 @Injectable({
   providedIn: 'root'
 })
 export class ListaCancionesService {
   public canciones: any[];
-  constructor() { 
-    this.canciones = [ 
+  constructor(private http: HttpClient) { }
+
+    load() {
+      this.http.get("lista-canciones.json").subscribe((data: any) => {
+        this.canciones = data.results;
+      });
+    }
+  /*  this.canciones = [ 
       {  
          "wrapperType":"track",
          "kind":"tv-episode",
@@ -76,6 +82,6 @@ export class ListaCancionesService {
          "currency":"USD",
          "primaryGenreName":"Alternative",
          "isStreamable":true
-      }];
-    }
+      }];*/
+    
 }
