@@ -1,9 +1,31 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>ListaCanciones</ion-title>
+    <ion-searchbar (input)="getItems($event)"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-list>
+    <ion-item *ngFor="let canciones of listaCancionesService.canciones">
+      <ion-thumbnail slot="start">
+          <img src={{canciones.artworkUrl100}}/>
+        </ion-thumbnail>
+        <ion-grid>
+          <ion-row>
+            <ion-col align-self-stretch>
+              <h4 ion-grid-padding>{{ canciones.collectionName }}</h4>
+              <ion-col>
+                <h5>{{ canciones.artistName }}</h5>
+                <p>{{ canciones.trackName }}</p>
+              </ion-col>
+            </ion-col>
 
+          </ion-row>
+        </ion-grid>
+        
+        
+        
+      </ion-item>   
+  </ion-list>
 </ion-content>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ListaCancionesService } from '../services/lista-canciones.service';
 
 @Component({
   selector: 'app-lista-canciones',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaCancionesPage implements OnInit {
 
-  constructor() { }
+  constructor(public listaCancionesService: ListaCancionesService) { }
 
   ngOnInit() {
   }
