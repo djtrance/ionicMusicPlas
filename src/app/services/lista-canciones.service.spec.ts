@@ -14,10 +14,10 @@ describe('ListaCancionesService', () => {
   //beforeEach(() => TestBed.configureTestingModule({}));
 
   it("should have a non empty array called products", () => {
-    let products = listaCancionesService.canciones;
+    let cancionesLista = listaCancionesService.canciones;
 
-    expect(Array.isArray(canciones)).toBeTruthy();
-    expect(canciones.length).toBeGreaterThan(0);
+    expect(Array.isArray(cancionesLista.canciones)).toBeTruthy();
+    expect(cancionesLista.length).toBeGreaterThan(0);
   });
   /*
   it('should be created', () => {
