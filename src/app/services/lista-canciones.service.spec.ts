@@ -13,11 +13,11 @@ describe('ListaCancionesService', () => {
   });
   //beforeEach(() => TestBed.configureTestingModule({}));
 
-  it("should have a non empty array called products", () => {
-    let cancionesLista = listaCancionesService.canciones;
+  it("should have a non empty array called cancionesAtributos", () => {
+    let cancionesAtributos = listaCancionesService.canciones;
 
-    expect(Array.isArray(cancionesLista.canciones)).toBeTruthy();
-    expect(cancionesLista.length).toBeGreaterThan(0);
+    expect(Array.isArray(cancionesAtributos)).toBeTruthy();
+    expect(cancionesAtributos.length).toBeGreaterThan(0);
   });
   /*
   it('should be created', () => {
