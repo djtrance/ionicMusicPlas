@@ -9,9 +9,15 @@ import { ListaCancionesService } from "../services/lista-canciones.service"
 export class ListaCancionesPage implements OnInit {
 
   constructor(public listaCancionesService: ListaCancionesService) { }
-
+  public buscarVal: String="";
   ngOnInit() {
    this.listaCancionesService.load();
   }
-
+  getItems($event){
+    console.log("voy a buscar");
+    if(this.buscarVal!==""){
+      this.listaCancionesService.loadSearch(this.buscarVal);
+    }
+    
+  }
 }
