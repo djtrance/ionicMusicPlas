@@ -1,11 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { ListaCancionesPage } from './lista-canciones.page';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { ListaCancionesService } from '../services/lista-canciones.service';
-
+import { HttpClientTestingModule } from "@angular/common/http/testing";
+import { ListaCancionesMock } from "../../mocks";
 describe('ListaCancionesPage', () => {
   let component: ListaCancionesPage;
   let fixture: ComponentFixture<ListaCancionesPage>;
@@ -15,9 +16,11 @@ describe('ListaCancionesPage', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ListaCancionesPage ],
-      imports: [IonicModule.forRoot()],
-      providers: [ListaCancionesService],
-      //schemas: [CUSTOM_ELEMENTS_SCHEMA]
+      imports: [IonicModule.forRoot(), HttpClientTestingModule],
+      providers: [{provide: ListaCancionesService,
+                  useClass: ListaCancionesMock
+      }],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
 
    // fixture = TestBed.createComponent(ListaCancionesPage);

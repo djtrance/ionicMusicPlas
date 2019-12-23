@@ -11,6 +11,7 @@ export class ListaCancionesPage implements OnInit {
   constructor(public listaCancionesService: ListaCancionesService) { }
 
   ngOnInit() {
+   this.listaCancionesService.load();
   }
 
 }
