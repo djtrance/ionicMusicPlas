@@ -8,7 +8,7 @@ export class ListaCancionesService {
   constructor(private http: HttpClient) { }
 
     load() {
-      this.http.get("lista-canciones.json").subscribe((data: any) => {
+      this.http.get("assets/lista-canciones.json").subscribe((data: any) => {
         this.canciones = data.results;
       });
     }
